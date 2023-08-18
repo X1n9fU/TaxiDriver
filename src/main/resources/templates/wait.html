@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>TaxiDriver</title>
+</head>
+<body>
+    <h3>이름</h3>
+    <p th:text="${taxiDriver.name}"></p>
+    <h3>전화번호</h3>
+    <p th:text="${taxiDriver.phone}"></p>
+    <h3>번호판</h3>
+    <p th:text="${taxiDriver.CarNumber}"></p>
+    <h3>차 기종</h3>
+    <p th:text="${taxiDriver.CarType}"></p>
+<button th:onclick="|location.href='@{/}'|">로그아웃</button>
+
+    <hr>
+    <form th:action="@{/api/client}" method="post">
+        <p>post 실행해보려고 그냥 넣은 창(기사님 전화번호)</p>
+        <input type="text" th:value="${taxiDriver.phone}" name="phone" readonly>
+        <button type="submit">수락</button>
+    </form>
+</body>
+</html>
